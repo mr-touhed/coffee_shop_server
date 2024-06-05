@@ -24,6 +24,7 @@ const get_single_product = async (req,res) =>{
 const add_product = async (req,res) =>{
     try {
         const body = req.body;
+        
         const newProduct = {...body,price:parseInt(body.price)}
         
         const result =await  product_collection.insertOne(newProduct);
