@@ -26,7 +26,7 @@ const add_product = async (req,res) =>{
         const body = req.body;
         
         const newProduct = {...body,price:parseInt(body.price)}
-        
+        console.log(newProduct);
         const result =await  product_collection.insertOne(newProduct);
         return res.status(201).json({status:true,result})
     } catch (error) {
